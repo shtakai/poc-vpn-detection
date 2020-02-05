@@ -2,7 +2,7 @@
 
 ![](assets/demo.gif)
 
-I found it fascinating that services like Netflix could detect that you're using a VPN to get around geo-restrictions on content. I wanted to explore an idea for how to implement a similar detection service.
+I wanted to explore an idea for how to implement a VPN detection service à la Netflix or any other geo-restricted content.
 
 ## The Idea
 
