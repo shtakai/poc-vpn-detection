@@ -13,18 +13,21 @@
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-
-      #detection-result {
+        font-family: 'Open Sans', sans-serif;
         margin:auto;
         text-align: center;
         color: #fff;
-        font-family: 'Open Sans', sans-serif;
       }
     </style>
   </head>
   <body id="body">
-    <h1 id="detection-result">
+    <div id="results">
+      <h1 id="detection-result"></h1>
+      <h2>Browser Timezone</h2>
+      <span id="browser-timezone"></span>
+      <h2>IP Timezone</h2>
+      <span id="ip-timezone"></span>
+    </div>
     <script type="text/javascript" src="./test.js"></script>
   </body>
 </html>
