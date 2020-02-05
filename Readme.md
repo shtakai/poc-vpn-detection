@@ -1,4 +1,4 @@
-# Simple VPN detection
+# Simple VPN detection ([Demo](https://simple-vpn-detector.netlify.com/))
 
 ![](assets/demo.gif)
 
