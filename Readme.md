@@ -2,7 +2,9 @@
 
 ![](assets/demo.gif)
 
-I wanted to explore an idea for how to implement a VPN detection service à la Netflix or any other geo-restricted content.
+I wanted to explore an idea I had for how to implement a VPN detection service à la Netflix or any other geo-restricted content.
+
+**UPDATE: Turns out this idea isn't that good and fails in a lot of cases. I'll leave this project up but know that it has a high false positive rate. Thanks for playing!**
 
 ## The Idea
 
