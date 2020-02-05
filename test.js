@@ -18,21 +18,23 @@ detectVPN()
 .then(function(detectionResult) {
   var body = document.getElementById('body')
   var result = document.getElementById('detection-result')
-  var details = document.getElementById('result-details')
+  var details = document.getElementsByClassName('result')
 
   detectionResult.usingVPN ? result.textContent = "We know you're using a VPN" : result.textContent = "Ah, thanks for not using a VPN"
   detectionResult.usingVPN ? body.style.backgroundColor = '#FF4343' : body.style.backgroundColor = '#00CC6A'
-
+  body.style.color = '#fff'
   
-  document.getElementById("browser-timezone").textContent = result.browser
-  document.getElementById("ip-timezone").textContent = result.ip
-  details.style.display = 'block'
+  document.getElementById("browser-timezone").textContent = detectionResult.browser
+  document.getElementById("ip-timezone").textContent = detectionResult.ip
+  Array.prototype.forEach.call(details, d => d.style.display = 'block')
 })
 .catch(function(err) {
   var body = document.getElementById('body')
   var result = document.getElementById('detection-result')
+  var details = document.getElementsByClassName("error")
   var errorDetail = document.getElementById('error-detail')
   
   result.textContent = "There was an error detecting your VPN"
   errorDetail.textContent = err.message
+  Array.prototype.forEach.call(details, d => d.style.display = 'block')
 })
