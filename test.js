@@ -3,13 +3,15 @@ function detectVPN() {
 
   return fetch(`https://ipapi.co/json`)
   .then(function(response) { return response.json() })
-  .then(function (data) { 
-    var ipTimezone = data.timezone
+  .then(function (data) {
+    var ipTimezone = data.timezone || data.region
+    var ipTimeZoneregexp = new RegExp(`/?${ipTimezone}$`)
     console.log(`browser timezone: ${browserTimezone}`, `ip timezone: ${ipTimezone}`)
+    var usingVpn = data.timezone ? !(data.timezone === browserTimezone) : !ipTimeZoneregexp.test(browserTimezone)
     return {
       browser: browserTimezone,
       ip: ipTimezone,
-      usingVPN: ipTimezone != browserTimezone
+      usingVPN: usingVpn
     }
   })
 }
